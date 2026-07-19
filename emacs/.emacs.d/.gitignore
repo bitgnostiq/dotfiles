@@ -1,0 +1,8 @@
+# no-littering
+config/
+data/
+
+# elpaca
+elpaca/
+
+elpa/
