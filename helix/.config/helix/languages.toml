@@ -1,0 +1,163 @@
+# --- Languages ---
+
+# Python
+[[language]]
+name = "python"
+language-servers = ["pyrefly"]
+formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
+auto-format = true
+
+# Markdown
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]
+formatter = { command = 'prettier', args = ["--parser", "markdown"] }
+
+# Go
+[[language]]
+name = "go"
+comment-token = "//"
+roots = ["go.work", "go.mod"]
+language-servers = [ "gopls", "golangci-lint-lsp" ]
+formatter = { command = "goimports" }
+auto-format = true
+
+# Rust
+[[language]]
+name = "rust"
+roots = [
+  "Cargo.toml",
+  "Cargo.lock"
+]
+auto-format = true
+
+# C#
+[[language]]
+name = "c-sharp"
+roots = [".sln", ".csproj"]
+language-servers = ["roslyn-language-server"]
+formatter = { command = "csharpier", args = ["format"] }
+auto-format = true
+
+# Web: TypeScript / JavaScript
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "eslint"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server", "eslint"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server", "eslint"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server", "eslint"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+# JSON
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server"]
+formatter = { command = "prettier", args = ["--parser", "json"] }
+auto-format = true
+
+# YAML
+[[language]]
+name = "yaml"
+formatter = { command = 'prettier', args = ["--parser", "yaml"] }
+auto-format = true
+
+# HTML
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server"]
+formatter = { command = "prettier", args = ["--parser", "html"] }
+auto-format = true
+
+# CSS
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server"]
+formatter = { command = "prettier", args = ["--parser", "css"] }
+auto-format = true
+
+
+# --- Language Servers ---
+
+
+# Python
+[language-server.pyrefly]
+command = "pyrefly"
+args = ["lsp"]
+
+
+# Go
+[language-server.gopls.config]
+gofumpt = true
+
+[language-server.golangci-lint-lsp]
+command = "golangci-lint-langserver"
+
+[language-server.golangci-lint-lsp.config]
+command = ["golangci-lint", "run", "--output.json.path", "stdout", "--show-stats=false", "--issues-exit-code=1"]
+
+
+# Rust
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+
+# C#
+[language-server.roslyn-language-server]
+command = "roslyn-language-server"
+args = ["--logLevel=Information", "--stdio"]
+
+# ESLint
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
+
+# JSON
+[language-server.vscode-json-language-server.config]
+json = { validate = { enable = true }, format = { enable = true } }
+provideFormatter = true
+
+# CSS / SCSS / LESS
+[language-server.vscode-css-language-server.config]
+css = { validate = { enable = true } }
+scss = { validate = { enable = true } }
+less = { validate = { enable = true } }
+provideFormatter = true
+
+# --- Auto Pairs ---
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'

@@ -1,0 +1,3 @@
+# Zsh compiled files
+*.zwc
+.zcompdump*

@@ -1,0 +1,56 @@
+# --- Theme ---
+theme = "compline"
+
+# --- Editor ---
+[editor]
+line-number = "relative"
+mouse = false
+auto-completion = true
+auto-save = false
+auto-format = true
+text-width = 80
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+soft-wrap.enable = true
+soft-wrap.max-indent-retain = 80
+
+# LSP
+[editor.lsp]
+enable = true
+auto-signature-help = true
+display-messages = true
+display-inlay-hints = true
+
+# Indent Guides
+[editor.indent-guides]
+render = true
+character = "┊"
+skip-levels = 1
+
+# File Picker
+[editor.file-picker]
+hidden = false
+
+# Statusline
+[editor.statusline]
+left = ["mode", "spinner", "file-modification-indicator", "read-only-indicator"]
+center = ["file-name"]
+right = ["diagnostics", "register", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+# Cursor Shape
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+# --- Keybindings ---
+
+# Normal Mode 
+[keys.normal]
+"C-o" = ":config-open"
+"C-/" = "toggle_comments"
+"C-r" = ":reload-all"
+
+# Insert Mode 
+[keys.insert]
+j = { k = "normal_mode" }
