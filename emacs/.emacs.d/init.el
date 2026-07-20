@@ -98,10 +98,6 @@
 ;; Clear scratch buffer message
 (setq initial-scratch-message nil)
 
-
-
-
-
 ;;; Module loading
 
 ;; Keybinding
@@ -129,6 +125,7 @@
 (require 'init-clipboard)
 (require 'init-magit)
 (require 'init-dired)
+(require 'init-pinentry)
 
 ;; Org
 (require 'init-org)
