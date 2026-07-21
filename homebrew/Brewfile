@@ -1,0 +1,12 @@
+# --- Development Tools ---
+brew "emacs"
+brew "helix"
+brew "hugo"
+brew "mise"
+
+# --- CLI Utilities ---
+brew "bat"
+brew "fd"
+brew "pinentry"
+brew "ripgrep"
+brew "stow"

@@ -40,80 +40,84 @@ preset = 'qwerty'
 
 # --- Main Mode Keybindings ---
 [mode.main.binding]
-alt-enter = 'exec-and-forget open -a kitty'
+cmd-enter = 'exec-and-forget open -a kitty'
 
 # Window Focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+cmd-h = 'focus left'
+cmd-j = 'focus down'
+cmd-k = 'focus up'
+cmd-l = 'focus right'
 
 
 # Move Windows
-alt-shift-h = 'move left'
-alt-shift-j = 'move down'
-alt-shift-k = 'move up'
-alt-shift-l = 'move right'
+cmd-shift-h = 'move left'
+cmd-shift-j = 'move down'
+cmd-shift-k = 'move up'
+cmd-shift-l = 'move right'
 
 # --- Layout ---
 
 # Layout Shortcuts
-alt-slash = 'layout accordion horizontal vertical'
-alt-backslash = 'layout tiles horizontal vertical'
-alt-f = 'fullscreen'
-alt-0 = 'balance-sizes'
-alt-shift-0 = 'flatten-workspace-tree'
+cmd-slash = 'layout accordion horizontal vertical'
+cmd-backslash = 'layout tiles horizontal vertical'
+cmd-0 = 'balance-sizes'
+cmd-shift-0 = 'flatten-workspace-tree'
+
+cmd-shift-f = 'macos-native-fullscreen'
+cmd-e = 'macos-native-minimize'
+cmd-f = 'fullscreen'
+
 
 # Floating
-alt-shift-space = 'layout floating tiling'
+cmd-shift-space = 'layout floating tiling'
 
 # Resize
-alt-minus = 'resize smart -50'
-alt-equal = 'resize smart +50'
+cmd-minus = 'resize smart -50'
+cmd-equal = 'resize smart +50'
 
 # --- Workspaces ---
 
 # Workspace shortcuts (switch to workspace 1–10)
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
+cmd-1 = 'workspace 1'
+cmd-2 = 'workspace 2'
+cmd-3 = 'workspace 3'
+cmd-4 = 'workspace 4'
+cmd-5 = 'workspace 5'
+cmd-6 = 'workspace 6'
+cmd-7 = 'workspace 7'
+cmd-8 = 'workspace 8'
+cmd-9 = 'workspace 9'
 
 # Move windows to specific workspaces
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
-alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
+cmd-shift-1 = 'move-node-to-workspace 1'
+cmd-shift-2 = 'move-node-to-workspace 2'
+cmd-shift-3 = 'move-node-to-workspace 3'
+cmd-shift-4 = 'move-node-to-workspace 4'
+cmd-shift-5 = 'move-node-to-workspace 5'
+cmd-shift-6 = 'move-node-to-workspace 6'
+cmd-shift-7 = 'move-node-to-workspace 7'
+cmd-shift-8 = 'move-node-to-workspace 8'
+cmd-shift-9 = 'move-node-to-workspace 9'
 
 
 # Ctrl + workspace combo: move window and switch workspace
-alt-ctrl-1 = ['move-node-to-workspace 1', 'workspace 1']
-alt-ctrl-2 = ['move-node-to-workspace 2', 'workspace 2']
-alt-ctrl-3 = ['move-node-to-workspace 3', 'workspace 3']
-alt-ctrl-4 = ['move-node-to-workspace 4', 'workspace 4']
-alt-ctrl-5 = ['move-node-to-workspace 5', 'workspace 5']
-alt-ctrl-6 = ['move-node-to-workspace 6', 'workspace 6']
-alt-ctrl-7 = ['move-node-to-workspace 7', 'workspace 7']
-alt-ctrl-8 = ['move-node-to-workspace 8', 'workspace 8']
-alt-ctrl-9 = ['move-node-to-workspace 9', 'workspace 9']
+cmd-ctrl-1 = ['move-node-to-workspace 1', 'workspace 1']
+cmd-ctrl-2 = ['move-node-to-workspace 2', 'workspace 2']
+cmd-ctrl-3 = ['move-node-to-workspace 3', 'workspace 3']
+cmd-ctrl-4 = ['move-node-to-workspace 4', 'workspace 4']
+cmd-ctrl-5 = ['move-node-to-workspace 5', 'workspace 5']
+cmd-ctrl-6 = ['move-node-to-workspace 6', 'workspace 6']
+cmd-ctrl-7 = ['move-node-to-workspace 7', 'workspace 7']
+cmd-ctrl-8 = ['move-node-to-workspace 8', 'workspace 8']
+cmd-ctrl-9 = ['move-node-to-workspace 9', 'workspace 9']
 
 
 # Workspace back-and-forth
-alt-tab = 'workspace-back-and-forth'
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+cmd-tab = 'workspace-back-and-forth'
+cmd-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 
-alt-shift-m = 'mode manage'
+cmd-shift-m = 'mode manage'
 
 # --- Manage Mode Keybindings ---
 [mode.manage.binding]
@@ -128,3 +132,9 @@ h = ['join-with left', 'mode main']
 j = ['join-with down', 'mode main']
 k = ['join-with up', 'mode main']
 l = ['join-with right', 'mode main']
+
+
+# --- Application-specific Rules ---
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating']
