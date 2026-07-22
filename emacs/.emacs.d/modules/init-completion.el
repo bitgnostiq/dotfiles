@@ -30,20 +30,8 @@
   (setq xref-show-xrefs-function    #'consult-xref
         xref-show-definitions-function #'consult-xref)
   :bind (
-         ;; C-x bindings (ctl-x-map)
-         ("C-x M-:" . consult-complex-command)     ;; orig. repeat-complex-command
-         ("C-x b" . consult-buffer)                ;; orig. switch-to-buffer
-         ("C-x 4 b" . consult-buffer-other-window) ;; orig. switch-to-buffer-other-window
-         ("C-x 5 b" . consult-buffer-other-frame)  ;; orig. switch-to-buffer-other-frame
-         ;; Custom M-# bindings for fast register access
-         ("M-#" . consult-register-load)
-         ("M-'" . consult-register-store)          ;; orig. abbrev-prefix-mark (unrelated)
-         ("C-M-#" . consult-register)
-         ;; Other custom bindings
-         ("M-y" . consult-yank-pop)                ;; orig. yank-pop
          ;; M-g bindings (goto-map)
          ("M-g e" . consult-compile-error)
-         ("M-g f" . consult-flycheck)
          ("M-g g" . consult-goto-line)             ;; orig. goto-line
          ("M-g M-g" . consult-goto-line)           ;; orig. goto-line
          ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading

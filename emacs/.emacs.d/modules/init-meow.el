@@ -27,8 +27,8 @@
 
    ;; Windows
    '("w w" . other-window)
-   '("w v" . split-window-right)
-   '("w s" . split-window-below)
+   '("w r" . split-window-right)
+   '("w b" . split-window-below)
    '("w q" . delete-window)
    '("w o" . delete-other-windows)
 
@@ -36,19 +36,20 @@
    '("g" . magit-status)
 
    ;; LSP
-   '("l s" . lsp-workspace-shutdown)
-   '("l r" . lsp-workspace-restart)
-   '("l d" . lsp-describe-session)
+   '("l w" . lsp-workspace-shutdown)
+   '("l R" . lsp-workspace-restart)
+   '("l ?" . lsp-describe-session)
    '("l v" . lsp-version)
 
-   '("l g d" . lsp-ui-peek-find-definitions)
-   '("l g D" . xref-find-definitions-other-window)
-   '("l g r" . lsp-ui-peek-find-references)
-   '("l g i" . lsp-ui-peek-find-implementation)
-   '("l g h" . lsp-describe-thing-at-point)
+   '("l d" . lsp-ui-peek-find-definitions)
+   '("l D" . xref-find-definitions-other-window)
+   '("l r" . lsp-ui-peek-find-references)
+   '("l i" . lsp-ui-peek-find-implementation)
+   '("l h" . lsp-describe-thing-at-point)
 
-   '("l c a" . lsp-execute-code-action)
-   '("l c r" . lsp-rename)
+   '("l a" . lsp-execute-code-action)
+   '("l e" . flycheck-list-errors)
+   '("l n" . lsp-rename)
 
    ;; Compile / shell
    '("c c" . compile)

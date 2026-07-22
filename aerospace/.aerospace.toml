@@ -40,7 +40,6 @@ preset = 'qwerty'
 
 # --- Main Mode Keybindings ---
 [mode.main.binding]
-cmd-enter = 'exec-and-forget open -a kitty'
 
 # Window Focus
 cmd-h = 'focus left'
@@ -63,9 +62,9 @@ cmd-backslash = 'layout tiles horizontal vertical'
 cmd-0 = 'balance-sizes'
 cmd-shift-0 = 'flatten-workspace-tree'
 
-cmd-shift-f = 'macos-native-fullscreen'
+cmd-enter = 'macos-native-fullscreen'
 cmd-e = 'macos-native-minimize'
-cmd-f = 'fullscreen'
+cmd-m = 'fullscreen'
 
 
 # Floating
